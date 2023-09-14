@@ -3,7 +3,7 @@ import base64
 import logging
 import jwt
 from django.utils.encoding import force_str
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from rest_framework import exceptions
 from rest_framework.authentication import get_authorization_header
 from rest_framework_auth0.settings import auth0_api_settings

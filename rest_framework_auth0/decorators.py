@@ -44,7 +44,7 @@ class token_required(object):
         if request.method == 'OPTIONS':
             return func(request, *args, **kwargs)
 
-        auth_header = request.META.get('HTTP_AUTHORIZATION', None)
+        auth_header = request.headers.get('authorization', None)
 
         if auth_header is not None:
             tokens = auth_header.split(' ')

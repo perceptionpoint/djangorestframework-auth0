@@ -7,7 +7,7 @@ from django.contrib.auth.backends import (
 from django.contrib.auth.models import (
     Group,
 )
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from rest_framework import exceptions
 from rest_framework_auth0.settings import (
     auth0_api_settings,
