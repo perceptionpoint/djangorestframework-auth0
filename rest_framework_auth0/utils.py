@@ -145,7 +145,7 @@ def decode_auth_token(client, auth_token):
                 auth_token,
                 client['PUBLIC_KEY'],
                 audience=client['AUTH0_AUDIENCE'],
-                algorithm=client['AUTH0_ALGORITHM'],
+                algorithms=client['AUTH0_ALGORITHM'],
             )
 
         elif(client['AUTH0_ALGORITHM'].upper() == "HS256"):
@@ -194,7 +194,7 @@ def decode_auth_token(client, auth_token):
             )
         )
 
-    except jwt.ExpiredSignature:
+    except jwt.ExpiredSignatureError:
         msg = _('Signature has expired.')
 
         logger.info(
