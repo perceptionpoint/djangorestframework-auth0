@@ -194,7 +194,7 @@ def decode_auth_token(client, auth_token):
             )
         )
 
-    except jwt.ExpiredSignature:
+    except jwt.ExpiredSignatureError:
         msg = _('Signature has expired.')
 
         logger.info(
